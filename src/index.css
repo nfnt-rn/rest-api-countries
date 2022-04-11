@@ -1,13 +1,179 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,400&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: hsl(0, 0%, 98%);
+  color: black;
+  font-size: 16px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.flag {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+header {
+  font-weight: bolder;
+}
+
+.country-border {
+  border: 1px solid hsl(0, 0%, 82%);
+  padding: 8px 20px;
+  border-radius: 3px;
+  color: hsl(209, 23%, 22%);
+  font-size: 14px;
+}
+.country-borders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.country-content {
+  line-height: 2.4rem;
+  letter-spacing: 0.04rem;
+  color: black;
+  margin: 20px 0 35px;
+}
+
+.country-content-value {
+  font-weight: 300;
+  color: hsl(209, 23%, 22%);
+}
+
+.country-content-key {
+  color: hsl(0, 0%, 0%);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.country-borders-title {
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.country-info {
+  margin: 50px 7px;
+}
+
+.country-page {
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.country-card-img {
+  width: 100%;
+}
+.country-input-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px hsl(0, 0%, 88%), -2px -2px 4px hsl(0, 0%, 88%);
+  max-width: 300px;
+  min-width: 230px;
+  margin: 30px 0 40px;
+}
+
+.country-input-box {
+  position: relative;
+  margin: 30px 0 40px;
+}
+.country-input-search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+.icon-search {
+  stroke: hsl(0, 0%, 68%);
+}
+
+.country-regions-filter-list {
+  position: absolute;
+  top: 70px;
+  max-height: 230px;
+  padding: 10px 0;
+  overflow: auto;
+  z-index: 1;
+  left: 0;
+  box-shadow: 2px 2px 4px hsl(0, 0%, 88%);
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+.country-regions-filter-list-item {
+  padding: 14px 20px;
+  cursor: pointer;
+}
+.country-regions-filter-list-item:hover {
+  background-color: hsl(0, 0%, 88%);
+}
+
+.country-card-details {
+  padding: 20px 20px 0;
+  line-height: 1.5rem;
+  font-size: 16px;
+}
+
+.country-card-content {
+  line-height: 1.9rem;
+  margin-bottom: 24px;
+  margin-top: 10px;
+}
+
+.country-card-img {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 220px;
+}
+
+@media screen and (min-width: 1100px) {
+  .country-content-wrapper {
+    display: flex;
+    gap: 80px;
+  }
+  .countries-border {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .flag {
+    max-width: 42%;
+  }
+
+  .country-borders-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  .country-info {
+    margin: 40px 0;
+  }
+
+  .country-content {
+    margin: 28px 0;
+  }
+  .country-card-content {
+    margin-bottom: 24px;
+    margin-top: 10px;
+  }
 }
