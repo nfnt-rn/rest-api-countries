@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import ChevronDown from "../elements/chevrondown";
+import Close from "../elements/close";
 import Search from "../elements/search";
 import { SearchBarWrapper, InputWrapper } from "../styles/searchbar.styled";
 
-export default function SearchBar() {
+export default function SearchBar({ setCountries, fullCountries }) {
   const [region, setRegion] = useState([
     "Africa",
     "Americas",
@@ -15,9 +16,14 @@ export default function SearchBar() {
   const [selected, setCurrentSelected] = useState(null);
   const [toggleOptions, setToggleOptions] = useState(false);
 
-  const selectItem = (val) => {
+  const selectItem = async (val) => {
     setCurrentSelected(val);
-    toggleOptions(false);
+    setToggleOptions(false);
+    let res = await fetch(
+      `https://restcountries.com/v3.1/region/${val.toLowerCase()}`
+    );
+    res = await res.json();
+    setCountries(res);
   };
 
   return (
@@ -41,8 +47,14 @@ export default function SearchBar() {
         }}
       >
         <div className=""> {!selected ? "Filter by Region" : selected}</div>
-        <div>
-          <ChevronDown></ChevronDown>
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            setCurrentSelected(null);
+            setCountries(fullCountries);
+          }}
+        >
+          {!selected ? <ChevronDown></ChevronDown> : <Close></Close>}
         </div>
         {toggleOptions && (
           <div
