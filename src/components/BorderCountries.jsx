@@ -19,7 +19,7 @@ export default function BorderCountries({ borders }) {
 
   return (
     <div className="countries-border">
-      <p className="country-borders-title">Border Countries</p>
+      <p className="country-borders-title">Border Countries :</p>
       <div className="country-borders">
         {bnames &&
           bnames.map((border) => (

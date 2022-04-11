@@ -4,7 +4,7 @@ import Close from "../elements/close";
 import Search from "../elements/search";
 import { SearchBarWrapper, InputWrapper } from "../styles/searchbar.styled";
 
-export default function SearchBar({ setCountries, fullCountries }) {
+export default function SearchBar({ setCountries, fullCountries, countries }) {
   const [region, setRegion] = useState([
     "Africa",
     "Americas",
@@ -16,6 +16,25 @@ export default function SearchBar({ setCountries, fullCountries }) {
   const [selected, setCurrentSelected] = useState(null);
   const [toggleOptions, setToggleOptions] = useState(false);
 
+  const searchCountries = (value) => {
+    setCountries(
+      countries?.map((a) => {
+        console.log(a);
+        if (a.name.common.toLowerCase().includes(value.toLowerCase())) {
+          return {
+            ...a,
+            show: true,
+          };
+        } else {
+          return {
+            ...a,
+            show: false,
+          };
+        }
+      })
+    );
+  };
+
   const selectItem = async (val) => {
     setCurrentSelected(val);
     setToggleOptions(false);
@@ -23,13 +42,21 @@ export default function SearchBar({ setCountries, fullCountries }) {
       `https://restcountries.com/v3.1/region/${val.toLowerCase()}`
     );
     res = await res.json();
-    setCountries(res);
+    setCountries(
+      res.map((a) => {
+        return {
+          ...a,
+          show: true,
+        };
+      })
+    );
   };
 
   return (
     <SearchBarWrapper>
       <div className="country-input-box">
         <InputWrapper
+          onChange={(e) => searchCountries(e.target.value)}
           type="search"
           name="search"
           placeholder="Search for a country..."

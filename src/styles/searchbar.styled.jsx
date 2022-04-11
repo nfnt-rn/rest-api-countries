@@ -14,6 +14,6 @@ export const InputWrapper = styled.input`
   padding: 16px 50px;
   border: none;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 7px;
 `;

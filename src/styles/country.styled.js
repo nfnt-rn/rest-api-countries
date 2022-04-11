@@ -32,9 +32,10 @@ export const DesktopFlex = styled.div`
 
 export const CountryCardWrapper = styled.div`
   box-shadow: 2px 2px 4px hsl(0, 0%, 88%), -3px -3px 4px hsl(0, 0%, 88%);
-  border-radius: 5px;
+  border-radius: 7px;
   margin-bottom: 20px;
   cursor: pointer;
+
   @media (min-width: 1100px) {
     margin-bottom: 10px;
   }

@@ -5,10 +5,11 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  box-shadow: 1px 1px 4px hsl(0, 0%, 88%);
+  background-color: ${({ dark }) => (dark ? "hsl(209, 23%, 22%)" : "white")};
   height: 80px;
   @media (min-width: 1100px) {
-    padding: 40px;
+    padding: 40px 0;
+    max-width: 1536px;
+    margin: 0 auto;
   }
 `;

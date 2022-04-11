@@ -10,16 +10,39 @@ export default function Countries() {
     async function fetchCountries() {
       let res = await fetch("https://restcountries.com/v3.1/all");
       res = await res.json();
-      setCountries(res);
-      setFullCountries(res);
-      console.log(countries);
+      setCountries(
+        res.map((a) => {
+          return {
+            ...a,
+            show: true,
+          };
+        })
+      );
+      setFullCountries(
+        res.map((a) => {
+          return {
+            ...a,
+            show: true,
+          };
+        })
+      );
     }
     fetchCountries();
   }, []);
   return (
     <CountriesOuterWrapper>
-      <SearchBar setCountries={setCountries} fullCountries={fullCountries} />
-      <CountryCardList countries={countries}></CountryCardList>
+      <SearchBar
+        setCountries={setCountries}
+        fullCountries={fullCountries}
+        countries={countries}
+      />
+      {countries ? (
+        <CountryCardList
+          countries={countries.filter((a) => a.show === true)}
+        ></CountryCardList>
+      ) : (
+        <div className="loading">Loading...</div>
+      )}
     </CountriesOuterWrapper>
   );
 }

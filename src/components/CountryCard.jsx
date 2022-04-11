@@ -14,6 +14,7 @@ export default function CountryCard({
 
   return (
     <CountryCardWrapper
+      className="country-card-wrapper"
       onClick={(e) => {
         navigate(`/${code.toLowerCase()}`);
       }}

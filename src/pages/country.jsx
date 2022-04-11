@@ -19,12 +19,11 @@ export default function Country() {
       setCountry(res);
     }
     fetchCountry();
-    console.log(country);
   }, []);
 
   return (
     <div className="country-page">
-      <Button onClick={(e) => navigate("/")}>
+      <Button className="pbutton" onClick={(e) => navigate("/")}>
         <ArrowLeft></ArrowLeft>
         Back
       </Button>
