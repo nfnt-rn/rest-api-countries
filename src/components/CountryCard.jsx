@@ -30,8 +30,7 @@ export default function CountryCard({
             Region: <span className="country-content-value">{region}</span>
           </p>
           <p className="country-content-key">
-            Capital:
-            <span className="country-content-value">{capital}</span>
+            Capital: <span className="country-content-value">{capital}</span>
           </p>
         </div>
       </div>

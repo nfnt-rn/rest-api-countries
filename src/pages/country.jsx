@@ -31,11 +31,11 @@ export default function Country() {
 
       <DesktopFlex>
         {/* flag */}
-        <img
-          src={country !== null ? country?.flag : Flag}
-          alt="flag"
-          className="flag"
-        />
+        {country !== null ? (
+          <img src={country?.flag} alt="flag" className="flag" />
+        ) : (
+          <div className="flag"></div>
+        )}
         {/* title */}
         {country !== null && (
           <div className="country-info">

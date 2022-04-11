@@ -6,10 +6,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-bg: hsl(207, 26%, 17%);
+  --light-bg: hsl(0, 0%, 98%);
+  --dark-text: hsl(0, 0%, 100%);
+  --light-mode-el: hsl(0, 0%, 100%);
+  --dark-mode-el: hsl(209, 23%, 22%);
+  --light-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
-  background-color: hsl(0, 0%, 98%);
-  color: black;
+  background-color: var(--light-bg);
+  color: var(--light-text);
   font-size: 16px;
 }
 
@@ -22,6 +32,7 @@ body {
 .flag {
   width: 100%;
   aspect-ratio: 3/2;
+  background-color: var(--dark-gray);
 }
 
 header {
@@ -50,7 +61,7 @@ header {
 
 .country-content-value {
   font-weight: 300;
-  color: hsl(209, 23%, 22%);
+  color: var(--dark-gray);
 }
 
 .country-content-key {
@@ -74,9 +85,6 @@ header {
   margin: 0 auto;
 }
 
-.country-card-img {
-  width: 100%;
-}
 .country-input-filter {
   display: flex;
   justify-content: space-between;
@@ -140,6 +148,7 @@ header {
 }
 
 .country-card-img {
+  width: 100%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   height: 220px;
@@ -158,6 +167,7 @@ header {
 
   .flag {
     max-width: 42%;
+    background-color: var(--dark-gray);
   }
 
   .country-borders-title {
